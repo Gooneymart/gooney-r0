@@ -1,0 +1,55 @@
+# ==========================================
+# Rust / Cargo Artifacts
+# ==========================================
+/target/
+**/*.rs.bk
+
+# ==========================================
+# Kernel Build Artifacts & Configurations
+# ==========================================
+# Ignore local kernel configs and auto-generated build headers
+/kernel/**/.config
+/kernel/**/.config.old
+/kernel/**/Module.symvers
+/kernel/**/modules.order
+/kernel/**/include/generated/
+/kernel/**/arch/*/include/generated/
+/kernel/**/rustc_cfg
+/kernel/linux-riscv/
+# Common Linux build output files
+*.o
+*.ko
+*.mod
+*.mod.c
+*.order
+*.symvers
+.tmp_versions/
+.*.cmd
+*.d
+
+# ==========================================
+# DKMS & Load Directory Artifacts
+# ==========================================
+/load/**/*.ko
+/load/**/*.o
+/load/.tmp_versions/
+/load/build/
+
+# ==========================================
+# Firmware Binaries & Output Artifacts
+# ==========================================
+/firmware/**/*.elf
+/firmware/**/*.bin
+/firmware/**/*.hex
+/firmware/**/*.map
+
+# ==========================================
+# IDE, Editor & OS Files
+# ==========================================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo

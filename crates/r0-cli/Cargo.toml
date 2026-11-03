@@ -1,0 +1,12 @@
+[package]
+name = "r0-cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+r0-core = { path = "../r0-core" }
+r0-sim = { path = "../r0-sim" }
+r0-kernel = { path = "../r0-kernel" }
+r0-driver-gen = { path = "../r0-driver-gen" }

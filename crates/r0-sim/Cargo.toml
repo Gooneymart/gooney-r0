@@ -1,0 +1,11 @@
+[package]
+name = "r0-sim"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+r0-core = { path = "../r0-core" }
+anyhow = "1.0"
+
+[build-dependencies]
+cc = "1.0"

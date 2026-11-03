@@ -1,0 +1,43 @@
+# Contributing to gooney-ringzero (`gooney-r0`)
+
+Thank you for your interest in contributing to `gooney-ringzero`! 
+
+Please note that this toolkit is currently in **early development**. You should expect missing features, rough edges, and experimental APIs. Because the architecture evolves rapidly, **we strongly encourage forking the repository** for your own custom extensions, soft-IP adaptations, or experimental testbenches rather than flooding the upstream repository with pull requests.
+
+---
+
+## Preferred Workflow: Forking
+
+Since `gooney-r0` is deeply tied to hardware-software co-design and custom RISC-V extensions:
+1. **Fork the Repository:** Create your own fork on GitHub/GitLab to experiment freely.
+2. **Hack Locally:** Modify crates (`r0-core`, `r0-sim`, `r0-driver-gen`, `r0-kernel`, `r0-cli`) or adapt local kernel configurations inside `kernel/` to match your target soft-IP.
+3. **Keep Your Fork Synced:** Pull upstream changes manually as the core framework stabilizes.
+
+---
+
+## Reporting Issues & Bugs
+
+If you encounter bugs, broken kernel audits, or FFI panics:
+* Search existing issues before opening a new one.
+* Provide clear reproduction steps, including your target kernel version (e.g., Linux `7.4-rc1`) and toolchain details (`riscv64-linux-gnu-gcc` version, Rust compiler version).
+* **Pull Requests:** We are currently keeping PR reviews tightly scoped. If you wish to submit a bug fix or improvement, please open an issue first to discuss the change.
+
+---
+
+## Development Setup
+
+1. **Verify Toolchain & Kernel Readiness:**
+   Ensure your RISC-V cross-compiler and kernel `.config` satisfy `r0-kernel` requirements:
+   ```bash
+   cargo run --bin r0-cli -- kernel inspect --path kernel/linux-riscv
+
+Build Workspace:
+
+Bash
+cargo build --workspace
+Run Tests:
+
+Bash
+cargo test --workspace
+License
+By contributing to gooney-ringzero, you agree that your contributions will be licensed under the project's Mozilla Public License Version 2.0 (MPL-2.0). See LICENSE for details.
